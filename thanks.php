@@ -1,5 +1,8 @@
 <?php
 
+// ファイルの読み込み
+require_once('function.php');
+
 if($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: index.php');
 }
@@ -25,8 +28,8 @@ $content = $_POST['content'];
 </head>
 <body>
     <h1>お問い合わせありがとうございました！</h1>
-    <p><?php echo $nickname; ?></p>
-    <p><?php echo $email; ?></p>
-    <p><?php echo $content; ?></p>
+    <p><?php echo h($nickname); ?></p>
+    <p><?php echo h($email); ?></p>
+    <p><?php echo h($content); ?></p>
 </body>
 </html>
