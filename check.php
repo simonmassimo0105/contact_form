@@ -1,4 +1,14 @@
 <?php
+
+// echo '<pre>';
+// var_dump($_SERVER['REQUEST_METHOD']);
+// exit;
+
+// POST送信ではなかったら、index.phpにリダイレクトする
+if($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: index.php');
+}
+
 // 入力内容を取得
 $nickname = $_POST['nickname'];
 $email = $_POST['email'];
